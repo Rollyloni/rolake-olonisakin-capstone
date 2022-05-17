@@ -1,0 +1,94 @@
+main {
+  background-color: #f8f8f8;
+}
+
+.status__section {
+  display: flex;
+  align-items: center;
+
+  padding: 6rem 24rem;
+  padding-bottom: 3rem;
+}
+.btn__new,
+.btn__add {
+  border: 1px solid black;
+  margin-right: 1rem;
+  padding: 0.3rem 1rem;
+}
+.btn {
+  margin-left: 10rem;
+}
+.btn__new {
+  background-color: black;
+  color: white;
+}
+.dashboard__card {
+  display: flex;
+  padding: 0 24rem;
+}
+.dashboard__card--article {
+  margin-right: 2.1rem;
+  padding: 1rem;
+  padding-right: 1.2rem;
+  background-color: white;
+}
+.dashboard__card--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+span {
+  padding-right: 7rem;
+}
+.dashboard__card--number {
+  font-size: 3rem;
+}
+.dashboard__orders {
+  display: flex;
+  font-size: 1rem;
+  margin: 2rem 24rem;
+  margin-bottom: 0;
+  margin-right: 27.5rem;
+  padding: 1rem 0;
+  padding-right: 1rem;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid #f3f3f3;
+}
+.dashboard__orders--heading,
+.week {
+  padding: 0rem 1rem;
+  font-size: 1rem;
+}
+.dashboard__orders--heading {
+  font-size: 1.5rem;
+}
+.week {
+  border: 1px solid #f3f3f3;
+}
+.order__headings,
+.orders__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 0 24rem;
+  margin-right: 27.5rem;
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f3f3f3;
+}
+.detail {
+  margin: 0 6rem;
+  font-size: 0.8rem;
+}
+.order__headings.detail {
+  padding-right: 18rem;
+  font-size: 0.8rem;
+}
+.order__headings.detail.cust {
+  padding-right: 32rem;
+}
+.test {
+  padding-top: 4rem;
+}

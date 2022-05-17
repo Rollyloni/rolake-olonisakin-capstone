@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+.navbar__link {
+  text-decoration: none;
+  color: black;
+  padding: 0 2rem;
+}
+.navbar__container {
+  display: flex;
+  align-items: center;
+}
+.navbar__icon {
+  margin-right: 0.5rem;
+}
+.navbar__edge--icon {
+  padding: 0 1rem;
+}
