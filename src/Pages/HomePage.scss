@@ -50,6 +50,7 @@ span {
   margin-bottom: 0;
   margin-right: 27.5rem;
   padding: 1rem 0;
+
   padding-right: 1rem;
   justify-content: space-between;
   background-color: white;
@@ -76,6 +77,7 @@ span {
   margin-right: 27.5rem;
   padding: 1rem;
   padding-bottom: 0.5rem;
+
   border-bottom: 1px solid #f3f3f3;
 }
 .detail {
@@ -91,4 +93,20 @@ span {
 }
 .test {
   padding-top: 4rem;
+}
+.measurement__section {
+  background-color: white;
+}
+.measurement__container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 3rem 2rem;
+}
+.second {
+  margin-top: 0;
+}
+.completeDetails {
+  margin: 0 14rem;
+  background-color: white;
 }

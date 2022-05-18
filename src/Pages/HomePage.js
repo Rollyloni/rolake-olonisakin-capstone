@@ -1,8 +1,7 @@
 import React from "react";
 import "../Pages/HomePage.scss";
 import OrdersComponent from "../Components/OrdersComponent/OrdersComponent";
-import bagIcon from "../assets/bag.png";
-import personIcon from "../assets/person.png";
+import { FaUserPlus, FaShoppingBag } from "react-icons/fa";
 
 const HomePage = () => {
   return (
@@ -18,11 +17,12 @@ const HomePage = () => {
         <article className="dashboard__card--article">
           <div className="dashboard__card--container">
             <span>New Orders</span>
-            <img
+            <FaShoppingBag />
+            {/* <img
               src={bagIcon}
               alt="bag Icon"
               className="dashboard__card--icon"
-            />
+            /> */}
           </div>
           <p className="dashboard__card--number">32</p>
           <p>This week</p>
@@ -30,11 +30,12 @@ const HomePage = () => {
         <article className="dashboard__card--article">
           <div className="dashboard__card--container">
             <span>New Customers</span>
-            <img
+            {/* <img
               src={personIcon}
               alt="bag Icon"
               className="dashboard__card--icon"
-            />
+            /> */}
+            <FaUserPlus />
           </div>
           <p className="dashboard__card--number">4</p>
           <p>This week</p>
