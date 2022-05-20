@@ -1,36 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import avatar from "../assets/Rectangle 48.png";
 import editIcon from "../assets/Edit.jpg";
 import trashCan from "../assets/trash-alt.jpg";
 import viewOrders from "../assets/Group 14.png";
-const customers = [
-  {
-    image: "/",
-    Name: "John Doe",
-    Location: "Vancouver",
-    Address: "123 Lorem Ipsum",
-    Phone: "453-646-3488",
-    email: "johndoe@gmail.com",
-  },
-  {
-    image: "/",
-    Name: "John Doe",
-    Location: "Vancouver",
-    Address: "123 Lorem Ipsum",
-    Phone: "453-646-3488",
-    email: "johndoe@gmail.com",
-  },
-  {
-    image: "/",
-    Name: "John Doe",
-    Location: "Vancouver",
-    Address: "123 Lorem Ipsum",
-    Phone: "453-646-3488",
-    email: "johndoe@gmail.com",
-  },
-];
+import axios from "axios";
+import uniqid from "uniqid";
 
 const CustomersPage = () => {
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/customers").then((response) => {
+      console.log(response.data);
+      setCustomers(response.data);
+    });
+  }, []);
+
   return (
     <main className="test">
       <article className="dashboard__orders detail head">
@@ -45,21 +30,25 @@ const CustomersPage = () => {
         <h4>Phone</h4>
         <h4>Email</h4>
       </article>
-      {customers.map((order) => {
-        return (
-          <article className="orders__list detail">
-            <img src={avatar} alt="clothing" />
-            <p>{order.Name}</p>
-            <p>{order.Location}</p>
-            <p>{order.Address}</p>
-            <p>{order.Phone}</p>
-            <p>{order.email}</p>
-            <img src={viewOrders} alt="clothing" />
-            <img src={editIcon} alt="clothing" />
-            <img src={trashCan} alt="clothing" />
-          </article>
-        );
-      })}
+      {customers ? (
+        customers.map((order) => {
+          return (
+            <article className="orders__list detail" key={uniqid()}>
+              <img src={avatar} alt="clothing" />
+              <p>{order.Name}</p>
+              <p>{order.Location}</p>
+              <p>{order.Address}</p>
+              <p>{order.Phone}</p>
+              <p>{order.email}</p>
+              <img src={viewOrders} alt="clothing" />
+              <img src={editIcon} alt="clothing" />
+              <img src={trashCan} alt="clothing" />
+            </article>
+          );
+        })
+      ) : (
+        <p>loading</p>
+      )}
     </main>
   );
 };
