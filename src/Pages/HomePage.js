@@ -1,5 +1,6 @@
 import React from "react";
 import "../Pages/HomePage.scss";
+import { NavLink } from "react-router-dom";
 import OrdersComponent from "../Components/OrdersComponent/OrdersComponent";
 import { FaUserPlus, FaShoppingBag } from "react-icons/fa";
 
@@ -9,14 +10,19 @@ const HomePage = () => {
       <section className="status__section">
         <h2>Dashboard</h2>
         <div className="btn">
-          <span className="btn__new">+ New Order</span>
-          <span className="btn__add">+ New Customer</span>
+          <NavLink to="orders/add-order" className="navlink">
+            <span className="btn__new">+ New Order</span>
+          </NavLink>
+          <NavLink to="customers/add-customer" className="navlink">
+            <span className="btn__add">+ New Customer</span>
+          </NavLink>
         </div>
       </section>
       <section className="dashboard__card">
         <article className="dashboard__card--article">
           <div className="dashboard__card--container">
             <span>New Orders</span>
+
             <FaShoppingBag />
             {/* <img
               src={bagIcon}

@@ -3,6 +3,7 @@ import avatar from "../assets/Rectangle 48.png";
 import editIcon from "../assets/Edit.jpg";
 import trashCan from "../assets/trash-alt.jpg";
 import viewOrders from "../assets/Group 14.png";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import uniqid from "uniqid";
 
@@ -20,7 +21,9 @@ const CustomersPage = () => {
     <main className="test">
       <article className="dashboard__orders detail head">
         <h3 className="dashboard__orders--heading">Customers</h3>
-        <span className="btn__new ">+ New Customer</span>
+        <NavLink to="customers/add-customer" className="navlink">
+          <span className="btn__new ">+ New Customer</span>
+        </NavLink>
       </article>
       <article className="order__headings detail cust">
         <h4>Image</h4>
@@ -35,10 +38,10 @@ const CustomersPage = () => {
           return (
             <article className="orders__list detail" key={uniqid()}>
               <img src={avatar} alt="clothing" />
-              <p>{order.Name}</p>
-              <p>{order.Location}</p>
-              <p>{order.Address}</p>
-              <p>{order.Phone}</p>
+              <p>{order.name}</p>
+              <p>{order.location}</p>
+              <p>{order.address}</p>
+              <p>{order.phone}</p>
               <p>{order.email}</p>
               <img src={viewOrders} alt="clothing" />
               <img src={editIcon} alt="clothing" />

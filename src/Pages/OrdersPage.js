@@ -2,6 +2,7 @@ import React from "react";
 import orderImg from "../assets/Rectangle 34.png";
 import editIcon from "../assets/Edit.jpg";
 import trashCan from "../assets/trash-alt.jpg";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import uniqid from "uniqid";
@@ -21,7 +22,9 @@ const OrdersPage = () => {
       <article className="dashboard__orders detail head">
         <h3 className="dashboard__orders--heading">Orders</h3>
         {/* <span className="btn__add">Most sell</span> */}
-        <span className="btn__new ">+ New Order</span>
+        <NavLink to="orders/add-order" className="navlink">
+          <span className="btn__new ">+ New Order</span>
+        </NavLink>
       </article>
       <article className="order__headings detail">
         <h4>No</h4>
