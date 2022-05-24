@@ -3,8 +3,26 @@ import "../Pages/HomePage.scss";
 import { NavLink } from "react-router-dom";
 import OrdersComponent from "../Components/OrdersComponent/OrdersComponent";
 import { FaUserPlus, FaShoppingBag } from "react-icons/fa";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const HomePage = () => {
+  const [orders, setOrders] = useState(0);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/orders").then((response) => {
+      setOrders(response.data.length);
+    });
+  }, []);
+
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/customers").then((response) => {
+      setCustomers(response.data.length);
+    });
+  }, []);
+
   return (
     <main>
       <section className="status__section">
@@ -30,7 +48,7 @@ const HomePage = () => {
               className="dashboard__card--icon"
             /> */}
           </div>
-          <p className="dashboard__card--number">32</p>
+          <p className="dashboard__card--number">{orders}</p>
           <p>This week</p>
         </article>
         <article className="dashboard__card--article">
@@ -43,7 +61,7 @@ const HomePage = () => {
             /> */}
             <FaUserPlus />
           </div>
-          <p className="dashboard__card--number">4</p>
+          <p className="dashboard__card--number">{customers}</p>
           <p>This week</p>
         </article>
       </section>

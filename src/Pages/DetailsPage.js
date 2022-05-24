@@ -2,72 +2,56 @@ import React from "react";
 import measurement from "../assets/Group 44.png";
 import orderImg from "../assets/Rectangle 34.png";
 import body from "../assets/image 14.png";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import uniqid from "uniqid";
 
-const orders = [
-  {
-    image: "/",
-    style: "Slim fit trousers",
-    Amount: "$1,000",
-    Status: "/",
-    Delivery: "5 Aug 21",
-  },
-  {
-    image: "/",
-    style: "Slim fit trousers",
-    Amount: "$1,000",
-    Status: "/",
-    Delivery: "5 Aug 21",
-  },
-  {
-    image: "/",
-    style: "Slim fit trousers",
-    Amount: "$1,000",
-    Status: "/",
-    Delivery: "5 Aug 21",
-  },
-  {
-    image: "/",
-    style: "Slim fit trousers",
-    Amount: "$1,000",
-    Status: "/",
-    Delivery: "5 Aug 21",
-  },
-];
+const DetailsPage = (props) => {
+  const [customer, setCustomer] = useState([]);
 
-const DetailsPage = () => {
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080${props.location.pathname}`)
+      .then((response) => {
+        setCustomer(response.data);
+      });
+  }, [props.location.pathname]);
+
   return (
     <main className="test ">
       <section className="completeDetails">
         <p>
-          Location <span>Vancouver</span>
+          Location <span>{customer.location}</span>
         </p>
         <p>
-          Address <span>123 Lorem ipsum street</span>
+          Address <span>{customer.address}</span>
         </p>
         <p>
-          Contact Phone <span> 453-646-3488</span>
+          Contact Phone <span> {customer.phone}</span>
         </p>
         <p>
-          Contact Email<span>johndoe@gmail.com</span>
+          Contact Email<span>{customer.email}</span>
         </p>
         <p>
-          Client since <span>April 10, 2022</span>
+          Client since <span>{customer.clientSince}</span>
         </p>
       </section>
       <article className="dashboard__orders completeDetails">
         <p className="dashboard__orders--heading">Orders</p>
       </article>
-      {orders.map((order) => {
-        return (
-          <article className="orders__list completeDetails">
-            <img src={orderImg} alt="clothing" />
-            <p>{order.style}</p>
-            <p>$2500</p>
-            <p>Status</p>
-            <p>5 Aug 21</p>
-          </article>
-        );
-      })}
+      {customer.orders
+        ? customer.orders.map((order) => {
+            return (
+              <article className="orders__list completeDetails" key={uniqid()}>
+                <img src={orderImg} alt="clothing" />
+                <p>{order.style}</p>
+                <p>{order.amount}</p>
+                <p>{order.status}</p>
+                <p>{order.delivery}</p>
+              </article>
+            );
+          })
+        : null}
       <section>
         <article className="dashboard__orders second completeDetails">
           <p className="dashboard__orders--heading">Measurements</p>
