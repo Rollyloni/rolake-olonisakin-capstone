@@ -39,6 +39,15 @@ const DetailsPage = (props) => {
       <article className="dashboard__orders completeDetails">
         <p className="dashboard__orders--heading">Orders</p>
       </article>
+      <section>
+        <article className="order__headings completeDetails">
+          <h4>Image</h4>
+          <h4>Style</h4>
+          <h4>Amount</h4>
+          <h4>Status</h4>
+          <h4>Delivery Date</h4>
+        </article>
+      </section>
       {customer.orders
         ? customer.orders.map((order) => {
             return (
