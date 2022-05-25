@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const AddOrderForm = () => {
+const AddOrderForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let orderObj = {
@@ -18,6 +18,7 @@ const AddOrderForm = () => {
     axios.post("http://localhost:8080/orders", orderObj).then(() => {
       event.target.reset();
     });
+    props.history.push("/orders");
   };
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const AddCustomerForm = () => {
+const AddCustomerForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let customerObj = {
@@ -16,6 +16,9 @@ const AddCustomerForm = () => {
     axios.post("http://localhost:8080/customers", customerObj).then(() => {
       event.target.reset();
     });
+
+    // <Redirect to="/customers" />;
+    props.history.push("/customers");
   };
 
   return (

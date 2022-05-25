@@ -42,11 +42,6 @@ const HomePage = () => {
             <span>New Orders</span>
 
             <FaShoppingBag />
-            {/* <img
-              src={bagIcon}
-              alt="bag Icon"
-              className="dashboard__card--icon"
-            /> */}
           </div>
           <p className="dashboard__card--number">{orders}</p>
           <p>This week</p>
@@ -54,11 +49,6 @@ const HomePage = () => {
         <article className="dashboard__card--article">
           <div className="dashboard__card--container">
             <span>New Customers</span>
-            {/* <img
-              src={personIcon}
-              alt="bag Icon"
-              className="dashboard__card--icon"
-            /> */}
             <FaUserPlus />
           </div>
           <p className="dashboard__card--number">{customers}</p>
@@ -74,10 +64,10 @@ const HomePage = () => {
       <section>
         <article className="order__headings">
           <h4>Image</h4>
-          <h4>Style</h4>
+          <h4 className="style">Style</h4>
           <h4>Amount</h4>
           <h4>Status</h4>
-          <h4>Delivery Date</h4>
+          <h4>Delivery</h4>
         </article>
       </section>
       <OrdersComponent />

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import avatar from "../assets/Rectangle 48.png";
+import avatar from "../assets/placeholder.jpeg";
 import editIcon from "../assets/Edit.jpg";
 import trashCan from "../assets/trash-alt.jpg";
-// import viewOrders from "../assets/Group 14.png";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import uniqid from "uniqid";
@@ -40,7 +39,7 @@ const CustomersPage = (props) => {
         customers.map((order) => {
           return (
             <article className="orders__list detail" key={uniqid()}>
-              <img src={avatar} alt="clothing" />
+              <img src={avatar} alt="clothing" width="30px" />
               <p>{order.name}</p>
               <p>{order.location}</p>
               <p>{order.address}</p>

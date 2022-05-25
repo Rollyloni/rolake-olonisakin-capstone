@@ -1,5 +1,5 @@
 import React from "react";
-import orderImg from "../../assets/Rectangle 34.png";
+import siteLogo from "../../assets/Group 2.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import uniqid from "uniqid";
@@ -15,7 +15,7 @@ const OrdersComponent = () => {
   return orders.map((order) => {
     return (
       <article className="orders__list" key={uniqid()}>
-        <img src={orderImg} alt="clothing" />
+        <img src={siteLogo} alt="site logo" width="20px" />
         <p>{order.style}</p>
         <p>{order.amount}</p>
         <p>{order.status}</p>

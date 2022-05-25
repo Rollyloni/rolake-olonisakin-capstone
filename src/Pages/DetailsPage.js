@@ -1,6 +1,6 @@
 import React from "react";
 import measurement from "../assets/Group 44.png";
-import orderImg from "../assets/Rectangle 34.png";
+import siteLogo from "../assets/Group 2.png";
 import body from "../assets/image 14.png";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -19,22 +19,22 @@ const DetailsPage = (props) => {
 
   return (
     <main className="test ">
-      <section className="completeDetails">
-        <p>
-          Location <span>{customer.location}</span>
-        </p>
-        <p>
-          Address <span>{customer.address}</span>
-        </p>
-        <p>
-          Contact Phone <span> {customer.phone}</span>
-        </p>
-        <p>
-          Contact Email<span>{customer.email}</span>
-        </p>
-        <p>
-          Client since <span>{customer.clientSince}</span>
-        </p>
+      <section className="details__info completeDetails">
+        <h4 className="details__info--heading">
+          Location: <span>{customer.location}</span>
+        </h4>
+        <h4>
+          Address: <span>{customer.address}</span>
+        </h4>
+        <h4>
+          Contact Phone: <span> {customer.phone}</span>
+        </h4>
+        <h4>
+          Contact Email: <span>{customer.email}</span>
+        </h4>
+        <h4>
+          Client since: <span>{customer.clientSince}</span>
+        </h4>
       </section>
       <article className="dashboard__orders completeDetails">
         <p className="dashboard__orders--heading">Orders</p>
@@ -52,7 +52,7 @@ const DetailsPage = (props) => {
         ? customer.orders.map((order) => {
             return (
               <article className="orders__list completeDetails" key={uniqid()}>
-                <img src={orderImg} alt="clothing" />
+                <img src={siteLogo} alt="site logo" width="20px" />
                 <p>{order.style}</p>
                 <p>{order.amount}</p>
                 <p>{order.status}</p>

@@ -1,5 +1,5 @@
 import React from "react";
-import orderImg from "../assets/Rectangle 34.png";
+import siteLogo from "../assets/Group 2.png";
 import editIcon from "../assets/Edit.jpg";
 import trashCan from "../assets/trash-alt.jpg";
 import { NavLink } from "react-router-dom";
@@ -27,11 +27,11 @@ const OrdersPage = () => {
       </article>
       <article className="order__headings detail">
         <h4>No</h4>
-        <h4>Image</h4>
+        <h4 className="style">Image</h4>
         <h4>Style</h4>
-        <h4>Amount</h4>
-        <h4>Status</h4>
-        <h4>Delivery Date</h4>
+        <h4 className="styled">Amount</h4>
+        <h4 className="styled">Status</h4>
+        <h4 className="styled">Delivery Date</h4>
         <h4>Payment</h4>
         <h4>Client</h4>
       </article>
@@ -40,7 +40,7 @@ const OrdersPage = () => {
           return (
             <article className="orders__list detail" key={uniqid()}>
               <p>{order.no}</p>
-              <img src={orderImg} alt="clothing" />
+              <img src={siteLogo} alt="site logo" width="20px" />
               <p>{order.style}</p>
               <p>{order.amount}</p>
               <p>{order.status}</p>
