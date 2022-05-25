@@ -9,40 +9,49 @@ main {
   padding: 6rem 24rem;
   padding-bottom: 3rem;
 }
+.btn {
+  margin-left: 10rem;
+
+  &__new {
+    background-color: black;
+    color: white;
+  }
+}
+
 .btn__new,
 .btn__add {
   border: 1px solid black;
   margin-right: 1rem;
   padding: 0.3rem 1rem;
 }
-.btn {
-  margin-left: 10rem;
-}
-.btn__new {
-  background-color: black;
-  color: white;
-}
+
 .dashboard__card {
   display: flex;
   padding: 0 24rem;
+
+  &--article {
+    margin-right: 2.1rem;
+    padding: 1rem;
+    padding-right: 1.5rem;
+    background-color: white;
+  }
+
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &--number {
+    font-size: 3rem;
+  }
 }
-.dashboard__card--article {
-  margin-right: 2.1rem;
-  padding: 1rem;
-  padding-right: 1.2rem;
-  background-color: white;
-}
-.dashboard__card--container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 span {
   padding-right: 7rem;
+  font-weight: normal;
 }
-.dashboard__card--number {
-  font-size: 3rem;
-}
+
 .dashboard__orders {
   display: flex;
   font-size: 1rem;
@@ -50,21 +59,30 @@ span {
   margin-bottom: 0;
   margin-right: 27.5rem;
   padding: 1rem 0;
+
   padding-right: 1rem;
   justify-content: space-between;
   background-color: white;
   border-bottom: 1px solid #f3f3f3;
+
+  &--heading {
+    font-size: 1.5rem;
+  }
 }
 .dashboard__orders--heading,
 .week {
   padding: 0rem 1rem;
   font-size: 1rem;
 }
-.dashboard__orders--heading {
-  font-size: 1.5rem;
-}
+
 .week {
   border: 1px solid #f3f3f3;
+}
+.style {
+  padding-right: 4rem;
+}
+.styled {
+  padding-left: 2rem;
 }
 .order__headings,
 .orders__list {
@@ -76,19 +94,121 @@ span {
   margin-right: 27.5rem;
   padding: 1rem;
   padding-bottom: 0.5rem;
+  padding-right: 2rem;
   border-bottom: 1px solid #f3f3f3;
 }
+
+.order__headings {
+  margin-right: 27.5rem;
+  padding-left: 1rem;
+
+  &.detail {
+    padding-right: 18rem;
+    font-size: 0.8rem;
+  }
+
+  &.detail.cust {
+    padding-right: 32rem;
+  }
+}
+
 .detail {
-  margin: 0 6rem;
+  margin: 0 9rem;
+  margin-left: 4;
   font-size: 0.8rem;
 }
-.order__headings.detail {
-  padding-right: 18rem;
-  font-size: 0.8rem;
-}
-.order__headings.detail.cust {
-  padding-right: 32rem;
+.details__info--heading {
+  margin-right: 3rem;
 }
 .test {
   padding-top: 4rem;
+}
+.measurement__section {
+  background-color: white;
+}
+.measurement__container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 3rem 2rem;
+}
+.second {
+  margin-top: 0;
+}
+.completeDetails {
+  margin: 0 14rem;
+  background-color: white;
+}
+.navlink {
+  text-decoration: none;
+  color: black;
+}
+
+.details__info {
+  padding: 1rem;
+}
+
+//form styles
+.warehouse {
+  margin-left: 7rem;
+
+  &__button {
+    background-color: black;
+    width: 38%;
+    margin: 1rem;
+    color: white;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+
+    &.cancel {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  &__input {
+    margin: 0.5rem;
+    margin-top: 0.2rem;
+    margin-left: 2rem;
+    width: 80%;
+    padding: 0.6rem;
+    border-radius: 1rem;
+    margin-left: 10rem;
+
+    &.last {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__label {
+    margin: 1rem;
+    margin-bottom: 0;
+    margin-left: 10rem;
+  }
+
+  &__subheading {
+    margin: 2rem;
+    font-size: 1.4rem;
+    border-top: 1px solid #bdc5bd;
+    padding-top: 1.5rem;
+  }
+
+  &__mainheading {
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    padding-left: 8rem;
+  }
+
+  &__button--container {
+    display: flex;
+    padding: 0 2rem;
+    margin-left: 13rem;
+  }
+
+  &__section {
+    width: 70%;
+  }
 }

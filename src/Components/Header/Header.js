@@ -2,14 +2,12 @@ import React from "react";
 import "../Header/Header.scss";
 import siteLogo from "../../assets/Group 2.png";
 import dashboardIcon from "../../assets/dashboard.png";
-import basketIcon from "../../assets/basket.png";
-import peopleIcon from "../../assets/people.png";
-import settingsIcon from "../../assets/settings.png";
-import searchIcon from "../../assets/search.jpg";
 import notificationIcon from "../../assets/notification.png";
 import avatarIcon from "../../assets/Ellipse 1.png";
 import { NavLink } from "react-router-dom";
-
+import { FaShoppingBasket, FaUsers } from "react-icons/fa";
+import { IoIosSettings } from "react-icons/io";
+import { ImSearch } from "react-icons/im";
 const Header = () => {
   return (
     <header>
@@ -32,42 +30,27 @@ const Header = () => {
           </NavLink>
           <NavLink to="/orders" className="navbar__link">
             <li>
-              <img
-                src={basketIcon}
-                alt="orders icon"
-                className="navbar__icon"
-              />
+              <FaShoppingBasket className="navbar__icon" />
               Orders
             </li>
           </NavLink>
           <NavLink to="/customers" className="navbar__link">
             <li>
-              <img
-                src={peopleIcon}
-                alt="customers icon"
-                className="navbar__icon"
-              />
+              <FaUsers className="navbar__icon" />
               Customers
             </li>
           </NavLink>
           <NavLink to="/" className="navbar__link">
             <li>
-              <img
-                src={settingsIcon}
-                alt="settings icon"
-                className="navbar__icon"
-              />
+              <IoIosSettings className="navbar__icon" />
               Settings
             </li>
           </NavLink>
         </ul>
       </article>
       <section>
-        <img
-          src={searchIcon}
-          alt="search icon"
-          className="navbar__edge--icon"
-        />
+        <ImSearch />
+
         <img
           src={notificationIcon}
           alt="notidication icon"
