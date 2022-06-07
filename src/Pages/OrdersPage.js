@@ -14,7 +14,7 @@ const OrdersPage = () => {
     axios.get("http://localhost:8080/orders").then((response) => {
       setOrders(response.data);
     });
-  }, []);
+  }, [orders]);
 
   return (
     <main className="test">

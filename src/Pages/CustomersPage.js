@@ -13,7 +13,7 @@ const CustomersPage = (props) => {
     axios.get("http://localhost:8080/customers").then((response) => {
       setCustomers(response.data);
     });
-  }, []);
+  }, [customers]);
 
   function handleClick(id) {
     axios.get(`http://localhost:8080/customers/${id}`);
