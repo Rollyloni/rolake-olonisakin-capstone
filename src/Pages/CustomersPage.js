@@ -13,7 +13,7 @@ const CustomersPage = (props) => {
     axios.get("http://localhost:8080/customers").then((response) => {
       setCustomers(response.data);
     });
-  }, [customers]);
+  }, []);
 
   function handleClick(id) {
     axios.get(`http://localhost:8080/customers/${id}`);
@@ -52,7 +52,7 @@ const CustomersPage = (props) => {
                   handleClick(order.id);
                 }}
               >
-                <span>view orders</span>
+                <span>View Orders</span>
               </NavLink>
               {/* <img src={viewOrders} alt="clothing" /> */}
               <img src={editIcon} alt="clothing" />

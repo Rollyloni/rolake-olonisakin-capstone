@@ -18,7 +18,7 @@ const DetailsPage = (props) => {
   }, [props.location.pathname]);
 
   return (
-    <main className="test ">
+    <main className="test">
       <section className="details__info completeDetails">
         <h4 className="details__info--heading">
           Location: <span>{customer.location}</span>
